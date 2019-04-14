@@ -57,8 +57,19 @@ const Login = ({ ...props }) => {
             name="password"
           />
         </div>
-        <ul className="actions">
-          <li>
+        <ul
+          className="actions"
+          style={{
+            display: `flex`,
+            justifyContent: `center`,
+            alignItems: `center`,
+          }}
+        >
+          <li
+            style={{
+              padding: 0,
+            }}
+          >
             <input type="submit" value="Entrar" className="special" />
           </li>
           <li>
@@ -73,7 +84,14 @@ const Login = ({ ...props }) => {
           </li>
         </ul>
       </form>
-      <ul className="icons">
+      <ul
+        style={{
+          display: `flex`,
+          justifyContent: `center`,
+          alignItems: `center`,
+        }}
+        className="icons"
+      >
         <li>
           <a href="#" className="icon fa-github">
             <span className="label">GitHub</span>

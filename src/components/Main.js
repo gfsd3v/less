@@ -205,6 +205,7 @@ const Main = ({ ...props }) => {
           props.articleTimeout ? `timeout` : ``
         }`}
         style={{
+          backgroundColor: `transparent`,
           display: `none`,
           padding: `1.5rem`,
           justifyContent: `center`,

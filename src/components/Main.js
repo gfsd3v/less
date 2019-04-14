@@ -23,47 +23,39 @@ class Main extends React.Component {
         style={this.props.timeout ? { display: `flex` } : { display: `none` }}
       >
         <article
-          id="intro"
-          className={`${this.props.article === `intro` ? `active` : ``} ${
+          id="sobre"
+          className={`${this.props.article === `sobre` ? `active` : ``} ${
             this.props.articleTimeout ? `timeout` : ``
           }`}
           style={{ display: `none` }}
         >
-          <h2 className="major">Intro</h2>
+          <h2 className="major">Sobre</h2>
           <span className="image main">
             <img src={pic01} alt="" />
           </span>
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
+            <b>Noline</b> é um app que chegou para acabar com aquela fila chata
+            no restaurante e no supermercado funcionando como uma "comanda"
+            online e forma de pagamento.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-            lectus. Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. In non lorem sit amet elit
-            placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.
+            Com <b>Noline</b> todos as suas compras em um estabelecimento
+            parceiro são adicionadas diretamente para o nosso app, onde você
+            pode acompanhar a lista dos produtos comprados, seus valores e ao
+            realizar o pagamento diretamento no app é gerado um QRCode que é
+            validado na sua saida, evitando assim toda aquela chatice das filas.
           </p>
           {close}
         </article>
 
         <article
-          id="work"
-          className={`${this.props.article === `work` ? `active` : ``} ${
+          id="vantages"
+          className={`${this.props.article === `vantagens` ? `active` : ``} ${
             this.props.articleTimeout ? `timeout` : ``
           }`}
           style={{ display: `none` }}
         >
-          <h2 className="major">Work</h2>
+          <h2 className="major">Vantagens</h2>
           <span className="image main">
             <img src={pic02} alt="" />
           </span>
@@ -86,36 +78,13 @@ class Main extends React.Component {
         </article>
 
         <article
-          id="about"
-          className={`${this.props.article === `about` ? `active` : ``} ${
+          id="contato"
+          className={`${this.props.article === `contato` ? `active` : ``} ${
             this.props.articleTimeout ? `timeout` : ``
           }`}
           style={{ display: `none` }}
         >
-          <h2 className="major">About</h2>
-          <span className="image main">
-            <img src={pic03} alt="" />
-          </span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
-          </p>
-          {close}
-        </article>
-
-        <article
-          id="contact"
-          className={`${this.props.article === `contact` ? `active` : ``} ${
-            this.props.articleTimeout ? `timeout` : ``
-          }`}
-          style={{ display: `none` }}
-        >
-          <h2 className="major">Contact</h2>
+          <h2 className="major">Contato</h2>
           <form method="post" action="#">
             <div className="field half first">
               <label htmlFor="name">Name</label>
@@ -162,12 +131,111 @@ class Main extends React.Component {
           </ul>
           {close}
         </article>
+
+        <article
+          id="login"
+          className={`${this.props.article === `login` ? `active` : ``} ${
+            this.props.articleTimeout ? `timeout` : ``
+          }`}
+          style={{ display: `none` }}
+        >
+          <h2 className="major">Login</h2>
+          <form method="post" action="#">
+            <div className="field">
+              <label htmlFor="email">Email</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <div className="field">
+              <label htmlFor="message">Senha</label>
+              <input type="password" name="password" id="password" />
+            </div>
+            <ul className="actions">
+              <li>
+                <input type="submit" value="Entrar" className="special" />
+              </li>
+              <li>
+                <a
+                  href="javascript:;"
+                  onClick={() => {
+                    this.props.goToArticle(`register`)
+                  }}
+                >
+                  <i>Não tem uma conta ?</i>
+                </a>
+              </li>
+            </ul>
+          </form>
+          <ul className="icons">
+            <li>
+              <a href="#" className="icon fa-github">
+                <span className="label">GitHub</span>
+              </a>
+            </li>
+          </ul>
+          {close}
+        </article>
+
+        <article
+          id="register"
+          className={`${this.props.article === `register` ? `active` : ``} ${
+            this.props.articleTimeout ? `timeout` : ``
+          }`}
+          style={{ display: `none` }}
+        >
+          <h2 className="major">Registrar</h2>
+          <form method="post" action="#">
+            <div className="field">
+              <label htmlFor="name">Nome</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div className="field">
+              <label htmlFor="email">Email</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <div className="field">
+              <label htmlFor="message">Senha</label>
+              <input type="password" name="password" id="password" />
+            </div>
+            <div className="field">
+              <label htmlFor="message">Confirmar Senha</label>
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm-password"
+              />
+            </div>
+            <ul className="actions">
+              <li>
+                <input type="submit" value="Registrar" className="special" />
+              </li>
+              <li>
+                <a
+                  href="javascript:;"
+                  onClick={() => {
+                    this.props.goToArticle(`login`)
+                  }}
+                >
+                  <i>Já tem uma conta ?</i>
+                </a>
+              </li>
+            </ul>
+          </form>
+          <ul className="icons">
+            <li>
+              <a href="#" className="icon fa-github">
+                <span className="label">GitHub</span>
+              </a>
+            </li>
+          </ul>
+          {close}
+        </article>
       </div>
     )
   }
 }
 
 Main.propTypes = {
+  goToArticle: PropTypes.func,
   article: PropTypes.string,
   articleTimeout: PropTypes.bool,
   onCloseArticle: PropTypes.func,

@@ -20,7 +20,9 @@ form {
   }
 
   > .actions {
-    margin: ($gutter * 1.25) 0 0 0 !important;
+    display: flex;
+    flex-direction: column;
+    margin: ($gutter * 0.5) 0 0 0 !important;
   }
 
   @include breakpoint(small) {

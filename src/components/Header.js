@@ -12,17 +12,17 @@ const Header = props => (
         <h1>Noline</h1>
         <p>
           Ferramenta para fazer pagamentos em estabelecimentos
-          <br />e acabar com as filas de pgamento
+          <br />e acabar com as filas de pagamento
         </p>
       </div>
     </div>
     <nav>
       <ul>
-        <li>
+        {/*         <li>
           <a
             href="javascript:;"
             onClick={() => {
-              props.onOpenArticle(`intro`)
+              props.onOpenArticle(`sobre`)
             }}
           >
             Sobre
@@ -32,7 +32,7 @@ const Header = props => (
           <a
             href="javascript:;"
             onClick={() => {
-              props.onOpenArticle(`work`)
+              props.onOpenArticle(`vantagens`)
             }}
           >
             Vantagens
@@ -42,17 +42,17 @@ const Header = props => (
           <a
             href="javascript:;"
             onClick={() => {
-              props.onOpenArticle(`about`)
+              props.onOpenArticle(`contato`)
             }}
           >
             Contato
           </a>
-        </li>
+        </li> */}
         <li>
           <a
             href="javascript:;"
             onClick={() => {
-              props.onOpenArticle(`contact`)
+              props.onOpenArticle(`login`)
             }}
           >
             Entrar/Registrar

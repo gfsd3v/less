@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-# noline
-=======
-# Noline!
->>>>>>> Readme update
+# Noline

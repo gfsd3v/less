@@ -9,6 +9,7 @@ import SideNav, {
   NavText,
 } from '@trendmicro/react-sidenav'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
+import Avatar from 'react-avatar'
 
 const UserPanel = ({ ...props }) => {
   const [sideCollapse, setSideCollapse] = useState(``)
@@ -31,11 +32,23 @@ const UserPanel = ({ ...props }) => {
         <SideNav
           style={{ position: `inherit`, background: `transparent` }}
           onSelect={selected => {
-            // Add your code here
+            // Colocar aqui o que vai rolar;
           }}
         >
           <SideNav.Toggle />
           <SideNav.Nav style={{ marginTop: `1.5rem` }} defaultSelected="home">
+            <NavItem eventKey="profile">
+              <NavIcon>
+                <Avatar
+                  size="40"
+                  round
+                  src="https://i.pinimg.com/originals/4c/24/7f/4c247f881c6fbfeaafca95818b4d7a73.jpg"
+                />
+              </NavIcon>
+              <NavText>
+                <h4>Perfil</h4>
+              </NavText>
+            </NavItem>
             <NavItem eventKey="home">
               <NavIcon>
                 <i

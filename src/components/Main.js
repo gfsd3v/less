@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { RotateSpinLoader } from 'react-css-loaders'
+import Loader from 'react-loader-spinner'
 import Login from './Login'
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
@@ -204,10 +204,21 @@ const Main = ({ ...props }) => {
         className={`${props.article === `loader` ? `active` : ``} ${
           props.articleTimeout ? `timeout` : ``
         }`}
-        style={{ display: `none`, padding: `1.5rem` }}
+        style={{
+          display: `none`,
+          padding: `1.5rem`,
+          justifyContent: `center`,
+          alignItems: `center`,
+          width: `10rem`,
+        }}
       >
         <div className="loader-wrapper">
-          <RotateSpinLoader color="#ffffff" size={1} />
+          <Loader
+            type="RevolvingDot"
+            color="#FFFFFF"
+            height="100"
+            width="100"
+          />
         </div>
       </article>
 

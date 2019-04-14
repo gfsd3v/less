@@ -8,7 +8,7 @@ import '../assets/scss/main.scss'
 const Layout = ({ children, location }) => {
   let content
 
-  if (location && location.pathname === '/') {
+  if (location && location.pathname === `/`) {
     content = <div>{children}</div>
   } else {
     content = (
@@ -34,8 +34,8 @@ const Layout = ({ children, location }) => {
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
+              { name: `description`, content: `Noline` },
+              { name: `keywords`, content: `Noline` },
             ]}
           >
             <html lang="en" />

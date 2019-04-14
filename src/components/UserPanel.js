@@ -36,7 +36,10 @@ const UserPanel = ({ ...props }) => {
           }}
         >
           <SideNav.Toggle />
-          <SideNav.Nav style={{ marginTop: `1.5rem` }} defaultSelected="home">
+          <SideNav.Nav
+            style={{ marginTop: `1.5rem` }}
+            defaultSelected="profile"
+          >
             <NavItem eventKey="profile">
               <NavIcon>
                 <Avatar
@@ -46,21 +49,10 @@ const UserPanel = ({ ...props }) => {
                 />
               </NavIcon>
               <NavText>
-                <h4>Perfil</h4>
+                <h4>Meus dados</h4>
               </NavText>
             </NavItem>
-            <NavItem eventKey="home">
-              <NavIcon>
-                <i
-                  className="fa fa-fw fa-home"
-                  style={{ color: `white`, fontSize: `1.75em` }}
-                />
-              </NavIcon>
-              <NavText>
-                <h4>home</h4>
-              </NavText>
-            </NavItem>
-            <NavItem eventKey="buy">
+            <NavItem eventKey="cart">
               <NavIcon>
                 <i
                   className="fa fa-fw fa-shopping-cart"
@@ -68,7 +60,18 @@ const UserPanel = ({ ...props }) => {
                 />
               </NavIcon>
               <NavText>
-                <h4>Comprar</h4>
+                <h4>Carrinho</h4>
+              </NavText>
+            </NavItem>
+            <NavItem eventKey="restaurants">
+              <NavIcon>
+                <i
+                  className="fa fa-fw fa-map-marker"
+                  style={{ color: `white`, fontSize: `1.75em` }}
+                />
+              </NavIcon>
+              <NavText>
+                <h4>Restaurantes</h4>
               </NavText>
             </NavItem>
             <NavItem eventKey="history">

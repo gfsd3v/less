@@ -55,7 +55,7 @@ const Header = props => (
               props.onOpenArticle(`login`)
             }}
           >
-            Entrar/Registrar
+            Entrar / Registrar
           </a>
         </li>
       </ul>

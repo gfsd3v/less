@@ -1,6 +1,6 @@
 {
-  "name": "noline",
-  "description": "Noline - O fim das filas",
+  "name": "lineless",
+  "description": "Lineless - O fim das filas",
   "version": "1.0.0",
   "dependencies": {
     "@trendmicro/react-sidenav": "^0.4.5",

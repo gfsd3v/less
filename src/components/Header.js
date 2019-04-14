@@ -9,10 +9,10 @@ const Header = props => (
     </div>
     <div className="content">
       <div className="inner">
-        <h1>Noline</h1>
+        <h1>Lineless</h1>
         <p>
           Ferramenta para fazer pagamentos em estabelecimentos
-          <br />e acabar com as filas de pagamento
+          <br />e acabar com as filas.
         </p>
       </div>
     </div>

@@ -36,12 +36,12 @@ const Main = ({ ...props }) => {
           <img src={pic01} alt="" />
         </span>
         <p>
-          <b>Noline</b> é um app que chegou para acabar com aquela fila chata no
+          <b>Lineless</b> é um app que chegou para acabar com aquela fila chata no
           restaurante e no supermercado funcionando como uma "comanda" online e
           forma de pagamento.
         </p>
         <p>
-          Com <b>Noline</b> todos as suas compras em um estabelecimento parceiro
+          Com <b>Lineless</b> todos as suas compras em um estabelecimento parceiro
           são adicionadas diretamente para o nosso app, onde você pode
           acompanhar a lista dos produtos comprados, seus valores e ao realizar
           o pagamento diretamento no app é gerado um QRCode que é validado na

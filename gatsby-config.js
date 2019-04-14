@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Noline - O fim das filas`,
-    description: `Noline - O fim das filas`,
+    title: `Lineless - O fim das filas`,
+    description: `Lineless - O fim das filas`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -12,17 +12,21 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import Avatar from 'react-avatar'
 
 const UserPanel = ({ ...props }) => {
-  const [sideCollapse, setSideCollapse] = useState(``)
-  const [contentFull, setContentFull] = useState(``)
+  const [currentTab, setCurrentTab] = useState(`Perfil`)
   const axios = require(`axios`)
 
-  const toggleTeste = () => {
-    if (!sideCollapse && !contentFull) {
-      setSideCollapse(`is-collapsed`)
-      setContentFull(`is-full-width`)
-    } else {
-      setSideCollapse(``)
-      setContentFull(``)
+  const readableHeader = () => {
+    switch (currentTab) {
+      case `profile`:
+        return `perfil`
+      case `cart`:
+        return `carrinho`
+      case `restaurants`:
+        return `restaurantes`
+      case `history`:
+        return `histórico`
+      default:
+        return `bem vindo`
     }
   }
 
@@ -32,7 +36,7 @@ const UserPanel = ({ ...props }) => {
         <SideNav
           style={{ position: `inherit`, background: `transparent` }}
           onSelect={selected => {
-            // Colocar aqui o que vai rolar;
+            setCurrentTab(selected)
           }}
         >
           <SideNav.Toggle />
@@ -85,7 +89,7 @@ const UserPanel = ({ ...props }) => {
                 <h4>Historico</h4>
               </NavText>
             </NavItem>
-            <NavItem eventKey="Sair">
+            <NavItem eventKey="sair">
               <NavIcon>
                 <i
                   className="fa fa-fw fa-power-off"
@@ -98,8 +102,8 @@ const UserPanel = ({ ...props }) => {
             </NavItem>
           </SideNav.Nav>
         </SideNav>
-        <section className={`user-content ${contentFull}`}>
-          <h2 className="major">Compras</h2>
+        <section className="user-content">
+          <h2 className="major">{readableHeader()}</h2>
         </section>
       </div>
     </Fragment>

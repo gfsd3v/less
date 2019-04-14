@@ -29,6 +29,19 @@
     border-radius: _size(border-radius);
     opacity: 0;
 
+    .loader-hidden {
+      display: none;
+    }
+    .loader-active {
+      display: block;
+    }
+
+    .loader-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     &.timeout {
       display: none;
     }

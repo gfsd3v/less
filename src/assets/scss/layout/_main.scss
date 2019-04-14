@@ -12,6 +12,13 @@
   z-index: 3;
   display: none;
 
+  #user-panel.active.timeout {
+    display: flex !important;
+    padding: 1rem;
+    width: 100%;
+    flex: 1;
+  }
+
   article {
     @include vendor('transform', 'translateY(0.25rem)');
     @include vendor(
@@ -103,6 +110,9 @@
   }
 
   @include breakpoint(small) {
+    .user-sidebar {
+      flex: 1 0 40%;
+    }
     article {
       @include padding(2rem, 2rem, (1.5rem, 0, 0.5rem, 0));
       .close {

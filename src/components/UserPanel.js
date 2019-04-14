@@ -1,28 +1,54 @@
 import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
-import { EndPoint } from './Config'
+import '../assets/scss/components/_userpanel.scss'
 
 const UserPanel = ({ ...props }) => {
-  const [loginEmail, setloginEmail] = useState(``)
-  const [loginPass, setloginPass] = useState(``)
-  const [error, setError] = useState(false)
+  const [sideCollapse, setSideCollapse] = useState(``)
+  const [contentFull, setContentFull] = useState(``)
   const axios = require(`axios`)
+
+  const toggleTeste = () => {
+    if (!sideCollapse && !contentFull) {
+      setSideCollapse(`is-collapsed`)
+      setContentFull(`is-full-width`)
+    } else {
+      setSideCollapse(``)
+      setContentFull(``)
+    }
+  }
 
   return (
     <Fragment>
-      <h2 className="major">Dashboard</h2>
-      <p>
-        <b>Noline</b> é um app que chegou para acabar com aquela fila chata no
-        restaurante e no supermercado funcionando como uma "comanda" online e
-        forma de pagamento.
-      </p>
-      <p>
-        Com <b>Noline</b> todos as suas compras em um estabelecimento parceiro
-        são adicionadas diretamente para o nosso app, onde você pode acompanhar
-        a lista dos produtos comprados, seus valores e ao realizar o pagamento
-        diretamento no app é gerado um QRCode que é validado na sua saida,
-        evitando assim toda aquela chatice das filas.
-      </p>
+      <div className="user-container">
+        <aside className={`user-sidebar ${sideCollapse}`}>
+          <ul className="icons">
+            <li>
+              <a href="#" className="icon fa-twitter">
+                <span className="label">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="icon fa-facebook">
+                <span className="label">Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="icon fa-instagram">
+                <span className="label">Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="icon fa-github">
+                <span className="label">GitHub</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <section className={`user-content ${contentFull}`}>
+          <h2 className="major">Compras</h2>
+          <button onClick={toggleTeste}>Toggle</button>
+        </section>
+      </div>
     </Fragment>
   )
 }

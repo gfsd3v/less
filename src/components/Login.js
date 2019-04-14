@@ -46,7 +46,6 @@ const Login = ({ ...props }) => {
             onChange={handleLoginChange}
             type="text"
             name="email"
-            id="email"
           />
         </div>
         <div className="field">
@@ -56,7 +55,6 @@ const Login = ({ ...props }) => {
             onChange={handlePassChange}
             type="password"
             name="password"
-            id="password"
           />
         </div>
         <ul className="actions">

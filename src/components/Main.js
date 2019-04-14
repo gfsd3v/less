@@ -20,7 +20,9 @@ const Main = ({ ...props }) => {
     <div
       ref={props.setWrapperRef}
       id="main"
-      style={props.timeout ? { display: `flex` } : { display: `none` }}
+      style={
+        props.timeout ? { display: `flex`, width: `100%` } : { display: `none` }
+      }
     >
       <article
         id="sobre"
@@ -87,11 +89,11 @@ const Main = ({ ...props }) => {
         <form method="post" action="#">
           <div className="field half first">
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" />
           </div>
           <div className="field half">
             <label htmlFor="email">Email</label>
-            <input type="text" name="email" id="email" />
+            <input type="text" name="email" />
           </div>
           <div className="field">
             <label htmlFor="message">Message</label>
@@ -153,15 +155,15 @@ const Main = ({ ...props }) => {
         <form method="post" action="#">
           <div className="field">
             <label htmlFor="name">Nome</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" />
           </div>
           <div className="field">
             <label htmlFor="email">Email</label>
-            <input type="text" name="email" id="email" />
+            <input type="text" name="email" />
           </div>
           <div className="field">
             <label htmlFor="message">Senha</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" />
           </div>
           <div className="field">
             <label htmlFor="message">Confirmar Senha</label>
@@ -214,7 +216,9 @@ const Main = ({ ...props }) => {
         className={`${props.article === `user-panel` ? `active` : ``} ${
           props.articleTimeout ? `timeout` : ``
         }`}
-        style={{ display: `none`, width: `100%`, flexGrow: `inherit` }}
+        style={{
+          display: `none`,
+        }}
       >
         <UserPanel goToArticle={props.goToArticle} />
       </article>

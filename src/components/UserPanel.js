@@ -25,6 +25,8 @@ const UserPanel = ({ ...props }) => {
         return `restaurantes`
       case `history`:
         return `histórico`
+      case `user-menu`:
+        return `cardápio`
       default:
         return `bem vindo`
     }
@@ -54,6 +56,17 @@ const UserPanel = ({ ...props }) => {
               </NavIcon>
               <NavText>
                 <h4>Meus dados</h4>
+              </NavText>
+            </NavItem>
+            <NavItem eventKey="user-menu">
+              <NavIcon>
+                <i
+                  className="fa fa-fw fa-glass"
+                  style={{ color: `white`, fontSize: `1.75em` }}
+                />
+              </NavIcon>
+              <NavText>
+                <h4>Meu cardápio</h4>
               </NavText>
             </NavItem>
             <NavItem eventKey="cart">

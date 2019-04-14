@@ -52,7 +52,7 @@ const Header = props => (
           <a
             href="javascript:;"
             onClick={() => {
-              props.onOpenArticle(`login`)
+              props.onOpenArticle(`user-panel`)
             }}
           >
             Entrar / Registrar

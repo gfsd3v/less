@@ -36,13 +36,13 @@ const Main = ({ ...props }) => {
           <img src={pic01} alt="" />
         </span>
         <p>
-          <b>Lineless</b> é um app que chegou para acabar com aquela fila chata no
-          restaurante e no supermercado funcionando como uma "comanda" online e
-          forma de pagamento.
+          <b>Lineless</b> é um app que chegou para acabar com aquela fila chata
+          no restaurante e no supermercado funcionando como uma "comanda" online
+          e forma de pagamento.
         </p>
         <p>
-          Com <b>Lineless</b> todos as suas compras em um estabelecimento parceiro
-          são adicionadas diretamente para o nosso app, onde você pode
+          Com <b>Lineless</b> todos as suas compras em um estabelecimento
+          parceiro são adicionadas diretamente para o nosso app, onde você pode
           acompanhar a lista dos produtos comprados, seus valores e ao realizar
           o pagamento diretamento no app é gerado um QRCode que é validado na
           sua saida, evitando assim toda aquela chatice das filas.

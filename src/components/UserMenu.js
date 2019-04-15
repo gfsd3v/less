@@ -6,12 +6,14 @@ import Loader from 'react-loader-spinner'
 
 const UserMenu = ({ ...props }) => {
   const [isMenuActive, setIsMenuActive] = useState(false)
+  const [currentMenuIndex, setCurrentMenuIndex] = useState(false)
   const [isLoading, setisLoading] = useState(true)
   const [menus, setMenus] = useState(false)
   const axios = require(`axios`)
 
-  const handleMenuClick = (menuName, menuId) => {
+  const handleMenuClick = (menuName, menuIndex) => {
     setIsMenuActive(menuName)
+    setCurrentMenuIndex(menuIndex)
   }
 
   async function getMenu() {
@@ -26,6 +28,39 @@ const UserMenu = ({ ...props }) => {
     }
   }
 
+  const showItems = () => (
+    <div />
+    /*     <Table basic="very" celled collapsing>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>Prato</Table.HeaderCell>
+          <Table.HeaderCell>Preço</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {menus[currentMenuIndex].items.map((item, index) => (
+          <Table.Row key={index}>
+            <Table.Cell>
+              <Header as="h5">
+                <Image
+                  style={{ width: `10%` }}
+                  src={item.image_link}
+                  rounded
+                  size="mini"
+                />
+                <Header.Content>
+                  {item.name}
+                  <Header.Subheader>{item.description}</Header.Subheader>
+                </Header.Content>
+              </Header>
+            </Table.Cell>
+            <Table.Cell>{`R$ ${item.price}`}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table> */
+  )
+
   if (isLoading) {
     getMenu()
     return (
@@ -37,16 +72,41 @@ const UserMenu = ({ ...props }) => {
   return (
     <Fragment>
       <h2 className="major">Cardápios</h2>
-      {menus.map(menu => (
-        <input
-          type="reset"
-          className={isMenuActive === menu.name ? `special` : ``}
-          style={{ marginBottom: `1rem`, width: `100%` }}
-          value={menu.name}
-          onClick={() => handleMenuClick(menu.name, menu.id)}
-          key={menu.id}
-        />
+      {menus.map((menu, index) => (
+        <Fragment key={index}>
+          <input
+            type="reset"
+            className={isMenuActive === menu.name ? `special` : ``}
+            style={{ marginBottom: `1rem`, width: `100%` }}
+            value={menu.name}
+            onClick={() => handleMenuClick(menu.name, index)}
+          />
+          {currentMenuIndex === index ? showItems() : ``}
+        </Fragment>
       ))}
+      <div>
+        <button
+          aria-expanded="false"
+          style={{
+            justifyContent: `center`,
+            alignItems: `center`,
+            display: `flex`,
+            width: `100%`,
+          }}
+        >
+          <span
+            className="fa fa-fw fa-plus"
+            style={{
+              display: `flex`,
+              justifyContent: `center`,
+              marginRight: `0.4rem`,
+              color: `white`,
+              fontSize: `1.75em`,
+            }}
+          />
+          adicionar cardapio
+        </button>
+      </div>
     </Fragment>
   )
 }

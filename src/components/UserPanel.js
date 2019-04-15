@@ -36,17 +36,17 @@ const UserPanel = ({ ...props }) => {
   const showContent = () => {
     switch (currentTab) {
       case `profile`:
-        return ``
+        return <h2 className="major">Bem vindo, clique em cardapios</h2>
       case `cart`:
-        return ``
+        return <h2 className="major">Bem vindo, clique em cardapios</h2>
       case `restaurants`:
-        return ``
+        return <h2 className="major">Bem vindo, clique em cardapios</h2>
       case `history`:
-        return ``
+        return <h2 className="major">Bem vindo, clique em cardapios</h2>
       case `user-menu`:
         return <UserMenu />
       default:
-        return ``
+        return <h2 className="major">Bem vindo, clique em cardapios</h2>
     }
   }
 
@@ -60,10 +60,7 @@ const UserPanel = ({ ...props }) => {
           }}
         >
           <SideNav.Toggle />
-          <SideNav.Nav
-            style={{ marginTop: `1.5rem` }}
-            defaultSelected="profile"
-          >
+          <SideNav.Nav style={{ marginTop: `1.5rem` }}>
             <NavItem eventKey="profile">
               <NavIcon>
                 <Avatar
@@ -134,8 +131,11 @@ const UserPanel = ({ ...props }) => {
           </SideNav.Nav>
         </SideNav>
         <section className="user-content">
-          {/* <h2 className="major">{readableHeader()}</h2> */}
-          {showContent()}
+          {currentTab ? (
+            showContent()
+          ) : (
+            <h2 className="major">Bem vindo, clique em cardapios</h2>
+          )}
         </section>
       </div>
     </Fragment>

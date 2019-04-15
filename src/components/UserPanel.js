@@ -10,6 +10,7 @@ import SideNav, {
 } from '@trendmicro/react-sidenav'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import Avatar from 'react-avatar'
+import UserMenu from './UserMenu'
 
 const UserPanel = ({ ...props }) => {
   const [currentTab, setCurrentTab] = useState(`Perfil`)
@@ -29,6 +30,23 @@ const UserPanel = ({ ...props }) => {
         return `cardápio`
       default:
         return `bem vindo`
+    }
+  }
+
+  const showContent = () => {
+    switch (currentTab) {
+      case `profile`:
+        return ``
+      case `cart`:
+        return ``
+      case `restaurants`:
+        return ``
+      case `history`:
+        return ``
+      case `user-menu`:
+        return <UserMenu />
+      default:
+        return ``
     }
   }
 
@@ -116,7 +134,8 @@ const UserPanel = ({ ...props }) => {
           </SideNav.Nav>
         </SideNav>
         <section className="user-content">
-          <h2 className="major">{readableHeader()}</h2>
+          {/* <h2 className="major">{readableHeader()}</h2> */}
+          {showContent()}
         </section>
       </div>
     </Fragment>

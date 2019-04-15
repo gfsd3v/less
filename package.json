@@ -17,7 +17,8 @@
     "react-avatar": "^3.6.0",
     "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
-    "react-loader-spinner": "^2.3.0"
+    "react-loader-spinner": "^2.3.0",
+    "semantic-ui-react": "^0.86.0"
   },
   "keywords": [
     "gatsby"

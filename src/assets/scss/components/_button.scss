@@ -2,6 +2,7 @@
 
 input[type='submit'],
 input[type='reset'],
+input[type='add'],
 input[type='button'],
 button,
 .button {
@@ -28,6 +29,14 @@ button,
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+
+  @include breakpoint(xsmall) {
+    font-size: 0.46rem;
+  }
+
+  @include breakpoint(small) {
+    font-size: 0.6rem;
+  }
 
   &:hover {
     background-color: _palette(border-bg);
@@ -70,6 +79,7 @@ button,
 }
 
 input[type='submit'],
+input[type='add'],
 input[type='reset'],
 input[type='button'],
 button {

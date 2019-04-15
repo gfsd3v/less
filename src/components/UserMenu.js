@@ -93,6 +93,7 @@ const UserMenu = ({ ...props }) => {
             display: `flex`,
             width: `100%`,
           }}
+          onClick={() => props.changeContent(`add-menu`)}
         >
           <span
             className="fa fa-fw fa-plus"

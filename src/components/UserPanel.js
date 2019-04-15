@@ -11,12 +11,13 @@ import SideNav, {
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import Avatar from 'react-avatar'
 import UserMenu from './UserMenu'
+import UserAddMenu from './UserAddMenu'
 
 const UserPanel = ({ ...props }) => {
   const [currentTab, setCurrentTab] = useState(`Perfil`)
   const axios = require(`axios`)
 
-  const readableHeader = () => {
+  /*   const readableHeader = () => {
     switch (currentTab) {
       case `profile`:
         return `perfil`
@@ -31,9 +32,11 @@ const UserPanel = ({ ...props }) => {
       default:
         return `bem vindo`
     }
-  }
-
-  const showContent = () => {
+  } */
+  const showContent = target => {
+    if (target) {
+      setCurrentTab(target)
+    }
     switch (currentTab) {
       case `profile`:
         return <h2 className="major">Bem vindo, clique em cardapios</h2>
@@ -44,7 +47,9 @@ const UserPanel = ({ ...props }) => {
       case `history`:
         return <h2 className="major">Bem vindo, clique em cardapios</h2>
       case `user-menu`:
-        return <UserMenu />
+        return <UserMenu changeContent={showContent} />
+      case `add-menu`:
+        return <UserAddMenu changeContent={showContent} />
       default:
         return <h2 className="major">Bem vindo, clique em cardapios</h2>
     }
@@ -131,11 +136,12 @@ const UserPanel = ({ ...props }) => {
           </SideNav.Nav>
         </SideNav>
         <section className="user-content">
-          {currentTab ? (
-            showContent()
+          {showContent()}
+          {/*           {currentTab ? (
+            showContent(currentTab)
           ) : (
             <h2 className="major">Bem vindo, clique em cardapios</h2>
-          )}
+          )} */}
         </section>
       </div>
     </Fragment>

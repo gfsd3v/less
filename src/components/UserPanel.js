@@ -75,7 +75,7 @@ const UserPanel = ({ ...props }) => {
                 />
               </NavIcon>
               <NavText>
-                <h4>Meus dados</h4>
+                <h4>Perfil</h4>
               </NavText>
             </NavItem>
             <NavItem eventKey="user-menu">
@@ -86,7 +86,7 @@ const UserPanel = ({ ...props }) => {
                 />
               </NavIcon>
               <NavText>
-                <h4>Meu cardápio</h4>
+                <h4>Cardápios</h4>
               </NavText>
             </NavItem>
             <NavItem eventKey="cart">

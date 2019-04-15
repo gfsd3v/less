@@ -2,76 +2,51 @@ import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import '../assets/scss/components/_userpanel.scss'
 import { Header, Image, Table } from 'semantic-ui-react'
+import Loader from 'react-loader-spinner'
 
 const UserMenu = ({ ...props }) => {
-  const [currentTab, setCurrentTab] = useState(`Perfil`)
+  const [isMenuActive, setIsMenuActive] = useState(false)
+  const [isLoading, setisLoading] = useState(true)
+  const [menus, setMenus] = useState(false)
   const axios = require(`axios`)
 
+  const handleMenuClick = (menuName, menuId) => {
+    setIsMenuActive(menuName)
+  }
+
+  async function getMenu() {
+    if (isLoading) {
+      try {
+        const response = await axios.get(`https://lineless.herokuapp.com/menu/`)
+        setMenus(response.data)
+        setisLoading(false)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+
+  if (isLoading) {
+    getMenu()
+    return (
+      <div className="loader-wrapper">
+        <Loader type="RevolvingDot" color="#FFFFFF" height="100" width="100" />
+      </div>
+    )
+  }
   return (
     <Fragment>
       <h2 className="major">Cardápios</h2>
-      <Table basic="very" celled collapsing>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Prato</Table.HeaderCell>
-            <Table.HeaderCell>Preço</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>
-              <Header as="h5">
-                <Image
-                  style={{ width: `10%` }}
-                  src="https://react.semantic-ui.com/images/avatar/small/lena.png"
-                  rounded
-                  size="mini"
-                />
-                <Header.Content>
-                  Comida
-                  <Header.Subheader>descrição da Comida</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell>22</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              <Header as="h5">
-                <Image
-                  style={{ width: `10%` }}
-                  src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
-                  rounded
-                  size="mini"
-                />
-                <Header.Content>
-                  comida
-                  <Header.Subheader>descrição da comida</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell>15</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              <Header as="h5">
-                <Image
-                  style={{ width: `10%` }}
-                  src="https://react.semantic-ui.com/images/avatar/small/lindsay.png"
-                  rounded
-                  size="mini"
-                />
-                <Header.Content>
-                  Comida
-                  <Header.Subheader>descrição da comida</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell>12</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
+      {menus.map(menu => (
+        <input
+          type="reset"
+          className={isMenuActive === menu.name ? `special` : ``}
+          style={{ marginBottom: `1rem`, width: `100%` }}
+          value={menu.name}
+          onClick={() => handleMenuClick(menu.name, menu.id)}
+          key={menu.id}
+        />
+      ))}
     </Fragment>
   )
 }

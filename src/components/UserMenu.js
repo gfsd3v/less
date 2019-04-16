@@ -29,36 +29,63 @@ const UserMenu = ({ ...props }) => {
   }
 
   const showItems = () => (
-    <div />
-    /*     <Table basic="very" celled collapsing>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Prato</Table.HeaderCell>
-          <Table.HeaderCell>Preço</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        {menus[currentMenuIndex].items.map((item, index) => (
-          <Table.Row key={index}>
-            <Table.Cell>
-              <Header as="h5">
-                <Image
-                  style={{ width: `10%` }}
-                  src={item.image_link}
-                  rounded
-                  size="mini"
-                />
-                <Header.Content>
-                  {item.name}
-                  <Header.Subheader>{item.description}</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell>{`R$ ${item.price}`}</Table.Cell>
+    <>
+      <Table basic="very" celled collapsing>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Prato</Table.HeaderCell>
+            <Table.HeaderCell>Preço</Table.HeaderCell>
+            <Table.HeaderCell>Ação</Table.HeaderCell>
           </Table.Row>
-        ))}
-      </Table.Body>
-    </Table> */
+        </Table.Header>
+        <Table.Body>
+          {menus[currentMenuIndex].items.map((item, index) => (
+            <>
+              <Table.Row key={index}>
+                <Table.Cell>
+                  <Header as="h5">
+                    <Image
+                      style={{ width: `10%` }}
+                      src={item.image_link}
+                      rounded
+                      size="mini"
+                    />
+                    <Header.Content>
+                      {item.name}
+                      <Header.Subheader>{item.description}</Header.Subheader>
+                    </Header.Content>
+                  </Header>
+                </Table.Cell>
+                <Table.Cell>{`R$ ${item.price}`}</Table.Cell>
+                <Table.Cell />
+              </Table.Row>
+            </>
+          ))}
+          <button
+            aria-expanded="false"
+            style={{
+              justifyContent: `center`,
+              alignItems: `center`,
+              display: `flex`,
+              marginTop: `0.5rem`,
+            }}
+            onClick={() =>
+              props.changeContent(`add-item`, menus[currentMenuIndex].id)
+            }
+          >
+            <span
+              className="fa fa-fw fa-plus"
+              style={{
+                display: `flex`,
+                justifyContent: `center`,
+                color: `white`,
+                fontSize: `1.75em`,
+              }}
+            />
+          </button>
+        </Table.Body>
+      </Table>
+    </>
   )
 
   if (isLoading) {

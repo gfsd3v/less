@@ -12,9 +12,11 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import Avatar from 'react-avatar'
 import UserMenu from './UserMenu'
 import UserAddMenu from './UserAddMenu'
+import UserAddItem from './UserAddItem'
 
 const UserPanel = ({ ...props }) => {
-  const [currentTab, setCurrentTab] = useState(`Perfil`)
+  const [currentTab, setCurrentTab] = useState(false)
+  const [showContentData, setshowContentData] = useState(false)
   const axios = require(`axios`)
 
   /*   const readableHeader = () => {
@@ -33,9 +35,10 @@ const UserPanel = ({ ...props }) => {
         return `bem vindo`
     }
   } */
-  const showContent = target => {
+  const showContent = (target, data) => {
     if (target) {
       setCurrentTab(target)
+      setshowContentData(data)
     }
     switch (currentTab) {
       case `profile`:
@@ -50,6 +53,10 @@ const UserPanel = ({ ...props }) => {
         return <UserMenu changeContent={showContent} />
       case `add-menu`:
         return <UserAddMenu changeContent={showContent} />
+      case `add-item`:
+        return (
+          <UserAddItem changeContent={showContent} menuId={showContentData} />
+        )
       default:
         return <h2 className="major">Bem vindo, clique em cardapios</h2>
     }

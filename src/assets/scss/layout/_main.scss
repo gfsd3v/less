@@ -15,8 +15,11 @@
   #user-panel.active.timeout {
     display: flex !important;
     padding: 1rem;
-    width: 100%;
     flex: 1;
+  }
+
+  #user-panel{
+    width: 50rem;
   }
 
   article {

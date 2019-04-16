@@ -11,8 +11,8 @@ const UserMenu = ({ ...props }) => {
   const [menus, setMenus] = useState(false)
   const axios = require(`axios`)
 
-  const handleMenuClick = (menuName, menuIndex) => {
-    setIsMenuActive(menuName)
+  const handleMenuClick = (menuId, menuIndex) => {
+    setIsMenuActive(menuId)
     setCurrentMenuIndex(menuIndex)
   }
 
@@ -107,10 +107,10 @@ const UserMenu = ({ ...props }) => {
         <Fragment key={index}>
           <input
             type="reset"
-            className={isMenuActive === menu.name ? `special` : ``}
+            className={isMenuActive === menu.id ? `special` : ``}
             style={{ marginBottom: `1rem`, width: `100%` }}
             value={menu.name}
-            onClick={() => handleMenuClick(menu.name, index)}
+            onClick={() => handleMenuClick(menu.id, index)}
           />
           {currentMenuIndex === index ? showItems() : ``}
         </Fragment>

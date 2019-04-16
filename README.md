@@ -15,11 +15,11 @@
 ## Setup
 
 - Extrair os arquivos do zip de front
-- Abrir o terminal e ir até o diretório da pasta e executar ``` sh $ npm install ```
+- Abrir o terminal e ir até o diretório da pasta e executar ```npm install ```
 
 ### Executando
 
-- Com o terminal no diretório da pasta execute ``` sh $ npm run dev ```
+- Com o terminal no diretório da pasta execute ```npm run dev ```
 - O site será exibido localmente no endereço “localhost:8000”
 
 ### Fontes

@@ -6,6 +6,7 @@ const UserAddItem = ({ ...props }) => {
   const [itemName, setItemName] = useState(false)
   const [itemPrice, setItemPrice] = useState(false)
   const [itemDescription, setItemDescription] = useState(false)
+  const [imgUrl, setImgUrl] = useState(false)
   const axios = require(`axios`)
 
   const handleChange = event => {
@@ -20,12 +21,20 @@ const UserAddItem = ({ ...props }) => {
     setItemDescription(event.target.value)
   }
 
+  const handleImgChange = event => {
+    setImgUrl(event.target.value)
+  }
+
   async function handleSubmit(event) {
     event.preventDefault()
+    let headers = {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    } 
     try {
       const response = await axios.post(
-        `https://lineless.herokuapp.com/menu/${props.menuId}/itens`,
-        { name: itemName, price: itemPrice, description: itemDescription }
+        `https://lineless.herokuapp.com/menu/${props.menuId}/`,
+        { name: itemName, price: itemPrice, description: itemDescription, image_url: imgUrl }, {headers: headers}
       )
       if (response.status === 201) {
         props.changeContent(`user-menu`)
@@ -50,6 +59,10 @@ const UserAddItem = ({ ...props }) => {
         <div className="field">
           <label htmlFor="name">preço</label>
           <input onChange={handlePriceChange} type="text" />
+        </div>
+        <div className="field">
+          <label htmlFor="name">URL da imagem</label>
+          <input onChange={handleImgChange} type="text" />
         </div>
         <ul
           style={{ display: `flex`, flexDirection: `row` }}

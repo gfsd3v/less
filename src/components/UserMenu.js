@@ -18,8 +18,12 @@ const UserMenu = ({ ...props }) => {
 
   async function getMenu() {
     if (isLoading) {
+      let headers = {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      } 
       try {
-        const response = await axios.get(`https://lineless.herokuapp.com/menu/`)
+        const response = await axios.get(`https://lineless.herokuapp.com/menu/`, {headers: headers})
         setMenus(response.data)
         setisLoading(false)
       } catch (error) {
@@ -46,7 +50,7 @@ const UserMenu = ({ ...props }) => {
                   <Header as="h5">
                     <Image
                       style={{ width: `10%` }}
-                      src={item.image_link}
+                      src={item.image_url}
                       rounded
                       size="mini"
                     />

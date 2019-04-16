@@ -1,6 +1,6 @@
 **Lineless** Trabalho desenvolvido pelo grupo Flag Code, esse repositório é referente a parte front-end da aplicação.
 
-[`Link para o app em prod`](https://vigorous-pasteur-297919.netlify.com/)
+[`Link para o projeto em produção`](https://vigorous-pasteur-297919.netlify.com/)
 
 ## Stack
 

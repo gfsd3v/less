@@ -1,14 +1,16 @@
 **Lineless** Trabalho desenvolvido pelo grupo Flag Code, esse repositório é referente a parte front-end da aplicação.
 
+[`Link para o app em prod`](https://reactjs.org/)https://vigorous-pasteur-297919.netlify.com/
+
 ## Stack
 
-- # [`React`](https://reactjs.org/)
-- # [`Sass`](https://sass-lang.com/)
-- # [`SemanticUI`](https://semantic-ui.com/)
+- #### [`React`](https://reactjs.org/)
+- #### [`Sass`](https://sass-lang.com/)
+- #### [`SemanticUI`](https://semantic-ui.com/)
 
 ## Requisitos
 
-`Node`(https://nodejs.org/en/)
+[`Node`](https://nodejs.org/en/)
 
 ## Setup
 

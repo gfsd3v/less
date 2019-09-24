@@ -1,6 +1,6 @@
 **Less** College project where I had to apply CRUD operations and implement a frontend to a application.
 
-[`Link para o projeto em produção`](https://lesss.netlify.com/)
+[`Production link`](https://lesss.netlify.com/)
 
 ## Stack
 

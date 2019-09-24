@@ -19,6 +19,8 @@ College project where I had to apply CRUD operations and implement a frontend to
 
 ## Images
 
+<details><summary>Site images</summary>
+  
 ![image](https://user-images.githubusercontent.com/36668882/65530947-48a6d380-decf-11e9-9d47-cd3ae5a9f6a9.png)
 
 ![image](https://user-images.githubusercontent.com/36668882/65531029-683dfc00-decf-11e9-943f-f02d4d574bae.png)
@@ -28,3 +30,5 @@ College project where I had to apply CRUD operations and implement a frontend to
 ![image](https://user-images.githubusercontent.com/36668882/65531113-8efc3280-decf-11e9-95a5-b4af4e8bf118.png)
 
 ![image](https://user-images.githubusercontent.com/36668882/65531179-ac310100-decf-11e9-84dd-c3e790cc8d57.png)
+
+</details>

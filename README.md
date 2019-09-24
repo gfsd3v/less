@@ -1,4 +1,6 @@
-**Less** College project where I had to apply CRUD operations and implement a frontend to a application.
+## Less
+
+College project where I had to apply CRUD operations and implement a frontend to a application.
 
 [`Production link`](https://lesss.netlify.com/)
 

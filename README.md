@@ -11,14 +11,13 @@ College project where I had to apply CRUD operations and implement a frontend to
 - #### [`Sass`](https://sass-lang.com/)
 - #### [`SemanticUI`](https://semantic-ui.com/)
 
-### Sources
+## Sources
 
-[`Stack Overflow`](https://pt.stackoverflow.com/)
-[`CSS-Tricks`](https://css-tricks.com/)
-[`HTML5UP`](https://html5up.net/)
+- ####[`Stack Overflow`](https://pt.stackoverflow.com/)
+- ####[`CSS-Tricks`](https://css-tricks.com/)
+- ####[`HTML5UP`](https://html5up.net/)
 
-### Images
-
+## Images
 
 ![image](https://user-images.githubusercontent.com/36668882/65530947-48a6d380-decf-11e9-9d47-cd3ae5a9f6a9.png)
 

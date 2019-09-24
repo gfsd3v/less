@@ -13,9 +13,9 @@ College project where I had to apply CRUD operations and implement a frontend to
 
 ## Sources
 
-- ####[`Stack Overflow`](https://pt.stackoverflow.com/)
-- ####[`CSS-Tricks`](https://css-tricks.com/)
-- ####[`HTML5UP`](https://html5up.net/)
+- #### [`Stack Overflow`](https://pt.stackoverflow.com/)
+- #### [`CSS-Tricks`](https://css-tricks.com/)
+- #### [`HTML5UP`](https://html5up.net/)
 
 ## Images
 
